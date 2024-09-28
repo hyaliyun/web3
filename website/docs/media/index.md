@@ -1,69 +1,52 @@
 ---
-title: Web media technologies
-slug: Web/Media
-page-type: landing-page
+title: "Media type and format guide: image, audio, and video content"
+slug: Web/Media/Formats
+page-type: guide
 ---
 
 
 
-Over the years, the Web's ability to present, create, and manage audio, video, and other media has grown at an increasing pace. Today, there are a large number of APIs available, as well as HTML elements, DOM interfaces, and other features that make it possible to not only perform these tasks, but use media in tandem with other technologies to do truly remarkable things. This article lists the various APIs with links to documentation you may find helpful in mastering them.
+Since nearly its beginning, the web has included support for some form of visual media presentation. Originally, these capabilities were limited, and were expanded organically, with different browsers finding their own solutions to the problems around including still and video imagery on the web. The modern web has powerful features to support the presentation and manipulation of media, with several media-related APIs supporting various types of content. Generally, the media formats supported by a browser are entirely up to the browser's creators, which can complicate the work of a web developer.
+
+This guide provides an overview of the media file types, {{Glossary("codec", "codecs")}}, and algorithms that may comprise media used on the web. It also provides browser support information for various combinations of these, and suggestions for prioritization of formats, as well as which formats excel at specific types of content.
 
 ## References
 
-### HTML
+### Images
 
-These articles cover HTML features for media developers.
+- [Image file type and format guide](/Web/Media/Formats/Image_types)
+  - : A guide to the main image file types and content formats used on the Internet. This includes a high level overview of: browser support, benefits, and limitations, along with best-practice guidelines to help web designers choose the right image file format for specific types of content.
 
-- {{HTMLElement("audio")}}
-  - : The `<audio>` element is used to play audio in a Web context. These can be used invisibly as a destination for more complex media, or with visible controls for user-controlled playback of audio files. Accessible from JavaScript as {{domxref("HTMLAudioElement")}} objects.
-- {{HTMLElement("video")}}
-  - : The `<video>` element is an endpoint for video content in a Web context. It can be used to present video files, or as a destination for streamed video content. `<video>` can also be used as a way to link media APIs with other HTML and DOM technologies, including {{HTMLElement("canvas")}} (for frame grabbing and manipulation), for example. Accessible from JavaScript as {{domxref("HTMLVideoElement")}} objects.
-- {{HTMLElement("track")}}
-  - : The HTML `<track>` element can be placed within an {{HTMLElement("audio")}} or {{HTMLElement("video")}} element to provide a reference to a [WebVTT](/Web/API/WebVTT_API) format subtitle or caption track to be used when playing the media. Accessible from JavaScript as {{domxref("HTMLTrackElement")}} objects.
-- {{HTMLElement("source")}}
-  - : The HTML `<source>` element is used within an {{HTMLElement("audio")}} or {{HTMLElement("video")}} element to specify source media to present. Multiple sources can be used to provide the media in different formats, sizes, or resolutions. Accessible from JavaScript as {{domxref("HTMLSourceElement")}} objects.
+### Media file types and codecs
 
-### APIs
-
-- [Media Capabilities API](/Web/API/Media_Capabilities_API)
-  - : The Media Capabilities API lets you determine the encoding and decoding capabilities of the device your app or site is running on. This lets you make real-time decisions about what formats to use and when.
-- [Media Capture and Streams API](/Web/API/Media_Capture_and_Streams_API)
-  - : A reference for the API which makes it possible to stream, record, and manipulate media both locally and across a network. This includes using local cameras and microphones to capture video, audio, and still images.
-- [Media Session API](/Web/API/Media_Session_API)
-  - : The Media Session API provides a way to customize media notifications. It does this by providing metadata for display by the user agent for the media your web app is playing. It also provides action handlers that the browser can use to access platform media keys such as hardware keys found on keyboards, headsets, remote controls, and software keys found in notification areas and on lock screens of mobile devices.
-- [MediaStream Recording API](/Web/API/MediaStream_Recording_API)
-  - : The MediaStream Recording API lets you capture media streams to process or filter the data or record it to disk.
-- [Web Audio API](/Web/API/Web_Audio_API)
-  - : The Web Audio API lets you generate, filter, and manipulate sound data both in real-time and on pre-recorded material, then send that audio to a destination such as an `<audio>` element, a media stream, or to disk.
-- [WebRTC](/Web/API/WebRTC_API)
-  - : WebRTC (Web Real-Time Communication) makes it possible to stream live audio and video, as well as transfer arbitrary data, between two peers over the Internet, without requiring an intermediary.
+- [Media containers (file types)](/Web/Media/Formats/Containers)
+  - : A guide to the file types that contain media data. Some are audio-specific, while others may be used for either audio or combined audiovisual content such as movies. Includes overviews of each of the file types supported by the major web browsers, along with browser support information and supported features.
+- [Web audio codec guide](/Web/Media/Formats/Audio_codecs)
+  - : A guide to the audio codecs allowed for by the common media containers, as well as by the major browsers. Includes benefits, limitations, key specifications and capabilities, and use cases. It also covers each browser's support for using the codec in given containers.
+- [Web video codec guide](/Web/Media/Formats/Video_codecs)
+  - : This article provides basic information about the video codecs supported by the major browsers, as well as some that are not commonly supported but that you might still run into. It also covers codec capabilities, benefits, limitations, and browser support levels and restrictions.
+- [Codecs in common media types](/Web/Media/Formats/codecs_parameter)
+  - : When specifying the MIME type describing a media format, you can provide details using the `codecs` parameter as part of the type string. This guide describes the format and possible values of the `codecs` parameter for the common media types.
+- [Codecs used by WebRTC](/Web/Media/Formats/WebRTC_codecs)
+  - : [WebRTC](/Web/API/WebRTC_API) doesn't use a container, but instead streams the encoded media itself from peer to peer using {{domxref("MediaStreamTrack")}} objects to represent each audio or video track. This guide discusses the codecs commonly used with WebRTC.
 
 ## Guides
 
-- [Using audio and video in HTML](/Web/Media/HTML_media)
-  - : A guide to using the HTML `<audio>` and `<video>` elements.
-- [Using images in HTML](/Web/Media/images)
-  - : A guide to adding images to websites that are responsive, accessible, and performant.
-- [Accessible multimedia](/Learn/Accessibility/Multimedia)
-  - : In this guide, we cover ways web designers and developers can create content that is accessible to people with different capabilities. This ranges from using the [`alt`](/Web/HTML/Element/img#alt) attribute on {{HTMLElement("img")}} elements to captions to tagging media for screen readers.
-- [Guide to media types and formats on the web](/Web/Media/Formats)
-  - : A guide to the file types and codecs available for images, audio, and video media on the web. This includes recommendations for what formats to use for what kinds of content, best practices including how to provide fallbacks and how to prioritize media types, and also includes general browser support information for each media container and codec.
-- [Streaming audio and video](/Web/Media/Streaming)
-  - : A guide which covers how to stream audio and video, as well as techniques and technologies you can take advantage of to ensure the best possible quality and/or performance of your streams.
-- [Autoplay guide for media and Web Audio APIs](/Web/Media/Autoplay_guide)
-  - : Unexpected automatic playback of media or audio can be an unwelcome surprise to users. While autoplay serves a purpose, it should be used carefully. To give users control over this, many browsers now provide forms of autoplay blocking. This article is a guide to autoplay, with tips on when and how to use it and how to work with browsers to handle autoplay blocking gracefully.
-- [Web Audio spatialization basics](/Web/API/Web_Audio_API/Web_audio_spatialization_basics)
-  - : In 3D environments, which may either be 3D scenes rendered to the screen or a mixed reality experience experienced using a headset, it's important for audio to be performed so that it sounds like it's coming from the direction of its source. This guide covers how to accomplish this.
+### Concepts
+
+- [Digital audio concepts](/Web/Media/Formats/Audio_concepts)
+  - : An introduction to how audio is converted into digital form and stored for use by computers. It explains basic concepts about how audio is sampled, as well as concepts such as sample rate, audio frames, and audio compression.
+- [Digital video concepts](/Web/Media/Formats/Video_concepts)
+  - : A guide to fundamental concepts involved with digital video as used on the web, including basics about color formats, chroma subsampling, how human perception influences video coding, and so forth.
+
+### Tutorials and how-tos
+
+- [Learning: Video and audio content](/Learn/HTML/Multimedia_and_embedding/Video_and_audio_content)
+  - : This tutorial introduces and details the use of media on the web.
+- [Handling media support issues in web content](/Web/Media/Formats/Support_issues)
+  - : In this guide, we look at how to build web content that maximizes quality or performance while providing the broadest possible compatibility, by choosing media formats wisely, and offering fallbacks and alternate formats where it would be helpful.
 
 ## Other topics
 
-Related topics which may be of interest, since they can be used in tandem with media APIs in interesting ways.
-
-- [The Canvas API](/Web/API/Canvas_API)
-  - : The Canvas API lets you draw into an {{HTMLElement("canvas")}}, manipulating and changing the contents of an image. This can be used with media in many ways, including by setting a `<canvas>` element as the destination for video playback or camera capture so that you can capture and manipulate video frames.
-- [WebGL](/Web/API/WebGL_API)
-  - : WebGL provides an OpenGL ES compatible API on top of the existing Canvas API, making it possible to do powerful 3D graphics on the Web. Through a canvas, this can be used to add 3D imagery to media content.
-- [WebXR](/Web/API/WebXR_Device_API)
-  - : WebXR, which has replaced the now-obsolete WebVR API, is a technology that provides support for creating virtual reality (VR) and augmented reality (AR) content. The mixed reality content can then be displayed on the device's screen or using goggles or a headset.
-- [WebVR](/Web/API/WebVR_API) {{deprecated_inline}}
-  - : The Web Virtual Reality API supports virtual reality (VR) devices such as the Oculus Rift or the HTC Vive, making it possible for developers to translate position and movement of the user into movement within a 3D scene which is then presented on the device. WebVR has been replaced by WebXR, and is due to be removed from browsers soon.
+- [Media Capabilities API](/Web/API/Media_Capabilities_API)
+  - : The Media Capabilities API lets you discover the encoding and decoding capabilities of the device your app or site is running on. This lets you make real-time decisions about what formats to use and when.
